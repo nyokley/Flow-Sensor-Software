@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>F5529LP_TRF7970A_ALL_NFC_MODES</name>
+	<name>ExternalDevice</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -33,22 +33,22 @@
 		<link>
 			<name>headers</name>
 			<type>2</type>
-			<locationURI>NFCLINK_DIR/Source/headers</locationURI>
+			<location>C:/Users/Nathaniel/workspace_v7/ExternalDevice/headers</location>
 		</link>
 		<link>
 			<name>nfc</name>
 			<type>2</type>
-			<locationURI>NFCLINK_DIR/Source/nfc</locationURI>
+			<location>C:/Users/Nathaniel/workspace_v7/ExternalDevice/nfc</location>
 		</link>
 		<link>
 			<name>nfc_gui_statemachines</name>
 			<type>2</type>
-			<locationURI>NFCLINK_DIR/Source/nfc_gui_statemachines</locationURI>
+			<location>C:/Users/Nathaniel/workspace_v7/ExternalDevice/nfc_gui_statemachines</location>
 		</link>
 		<link>
 			<name>usblib430</name>
 			<type>2</type>
-			<locationURI>USBLIB_DIR</locationURI>
+			<location>C:/Users/Nathaniel/workspace_v7/ExternalDevice/usblib430</location>
 		</link>
 	</linkedResources>
 	<variableList>
