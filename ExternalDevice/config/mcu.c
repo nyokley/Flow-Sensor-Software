@@ -333,6 +333,11 @@ static void LFXT_Start(unsigned int xtdrive) {
  **/
 void MCU_init(void)
 {
+    //set LED port directions
+    LEDB_DIR_OUT;
+    LEDR_DIR_OUT;
+    LEDG_DIR_OUT;
+
 	WDT_A_hold(__MSP430_BASEADDRESS_WDT_A__);
 
 	// Setup XT1 and XT2

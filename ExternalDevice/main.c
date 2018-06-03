@@ -6,10 +6,10 @@
 // TI Information - Selective Disclosure
 //
 //*****************************************************************************
+#include <ASAL.h>
 #include "msp430.h"
 #include "nfc_controller.h"
 #include "reader.h"
-#include "HBAL.h"
 
 #ifdef MSP430F5529_LAUNCHPAD_ENABLED
 #include "lp_buttons.h"

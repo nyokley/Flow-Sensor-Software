@@ -1,8 +1,7 @@
 /*
  * eeprom.c
- *
- *  Created on: Apr 30, 2018
- *      Author: Nathaniel
+ * Contains all functions relating to SPI communication with the EEPROM device
+ * and functions related to the device.
  */
 
 #include <msp430.h>
@@ -12,10 +11,9 @@
 
 void EEPROM_SPI_instruction(uint8_t cmd) {
 
-
-        EEPROM_SS_LOW;
-        SPI_SendByte(cmd);
-        EEPROM_SS_HIGH;
+    EEPROM_SS_LOW;
+    SPI_SendByte(cmd);
+    EEPROM_SS_HIGH;
 
 }
 

@@ -14,7 +14,7 @@
 #define EEPROM_SS_HIGH         P5OUT |= BIT6
 #define EEPROM_SS_LOW          P5OUT &= ~BIT6
 
-//Instructions
+//EEPROM Instructions
 #define WRSR    0x01
 #define WR      0x02
 #define READ    0x03

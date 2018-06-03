@@ -113,23 +113,23 @@ void SPI_readSingle(uint8_t *pbuf, uint8_t reg)
 
 void SPI_setup(void)
 {	
-   /*USCI_B_SPI_masterInit(SPI_MODULE_BASE_ADDR,
+   USCI_B_SPI_masterInit(SPI_MODULE_BASE_ADDR,
 						USCI_B_SPI_CLOCKSOURCE_SMCLK,
 						MCLK_FREQ,
 						SPI_CLK_FREQ,
 						USCI_B_SPI_MSB_FIRST,
 						USCI_B_SPI_PHASE_DATA_CHANGED_ONFIRST_CAPTURED_ON_NEXT,
 						USCI_B_SPI_CLOCKPOLARITY_INACTIVITY_HIGH
-						);                  --works for adt7320
-    */
-    USCI_B_SPI_masterInit(SPI_MODULE_BASE_ADDR,
+						);                  //--works for adt7320
+
+    /*USCI_B_SPI_masterInit(SPI_MODULE_BASE_ADDR,
                             USCI_B_SPI_CLOCKSOURCE_SMCLK,
                             MCLK_FREQ,
                             SPI_CLK_FREQ,
                             USCI_B_SPI_MSB_FIRST,
                             USCI_B_SPI_PHASE_DATA_CHANGED_ONFIRST_CAPTURED_ON_NEXT,
                             USCI_B_SPI_CLOCKPOLARITY_INACTIVITY_LOW            //subject to debate (..._HIGH)
-                            );
+                            );*/
 
 
 
