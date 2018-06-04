@@ -109,7 +109,7 @@ void main(void)
     __enable_interrupt();
 
     // Initialize USB Communication -- will have to restore since external device isn't working
-  //  Serial_init();
+    //Serial_init();
 
     // Initialize TRF7970 -- keep even when not using NFC because it sets up SPI
     TRF79x0_init();
@@ -125,45 +125,16 @@ void main(void)
     // Initialize IDs for NFC-A, NFC-B and NFC-F
     //NFC_initIDs();
 
-    uint8_t rdsr = 0;
-    uint8_t rdsrTest = 0;
+
     adt7320_init();
-    //sensor_start_timer();
+    EEPROM_init();
+    sensor_startSampling(10);   //take 10 samples before stopping
     while(1)
     {
-        check = adt7320_readTemp();
-        MCU_delayMillisecond(5);
+            //Can add conditions for startSampling - for instance a push button or
+            //transmissions from external device
 
-        LEDB_OFF;
-        MCU_delayMillisecond(5);
-
-        /*adt7320_init();
-        MCU_delayMillisecond(2);
-        adt7320_readTemp();
-        //__delay_cycles(1000);
-        MCU_delayMillisecond(2);*/
-
-        /*EEPROM_SPI_instruction(WREN);
-        MCU_delayMillisecond(1);
-        rdsr = EEPROM_ReadStatusRegister();
-        MCU_delayMillisecond(1);
-        EEPROM_SPI_instruction(RES);
-        MCU_delayMillisecond(1);
-        //__delay_cycles(1000);
-        if(rdsr < 255) {
-           // printf("%d\n", rdsr);
-        }*/
-
-        /*if(rdsr != 0) {
-            printf("%d\n", (int)rdsr);
-        }*/
-        //__delay_cycles(10000);
-
-        /*if(sensorState.readTemp) {
-            sensorState.readTemp = 0;
-            sensorState.tempInterval = adt7320_readTemp();
-        }*/
-
+            //for NFC communication, copy-paste code from clipboard.txt here.
     }
 }
 

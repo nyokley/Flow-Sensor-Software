@@ -40,6 +40,11 @@ MCU_delayMillisecond(uint32_t n_ms) - delays by n_ms milliseconds
 To use debugging leds:
 	Three LEDS: LEDB, LEDG, LEDR - set port using LEDx_DIR_OUT and turn on/off using LEDx_ON / LEDx_OFF
 
+Sensor:
+When it is time for the device to start polling, call sensor_startSampling(int numberSamples). It will turn on the ADC and timer and poll for
+numberSamples intervals then stop. The time between samples can be controlled in the function sensor_start_timer by changing the parameters for
+TIMER_A_configureUpMode.
+The data can be seen within the sensorState struct, declared in main.c.
 
 Thermometer:
 The microcontroller communicates with the ADT7320 via SPI. The slave select pin is P3.0.
@@ -57,10 +62,20 @@ The microcontroller communicates with the RM25C256C via SPI. The slave select pi
 The SPI configuration for this device is somewhat grey in the datasheet, so some experimentation on that front may yield positive results.
 The 8-bit instructions are defined as macros in a manner consistent with the datasheet.
 
+NFC:
+Information can be sent by calling the transmitMessage or sendData functions. 
+Information received from the external device can be seen in the received[] buffer, which can be found by ctrl+f "received[i]"
+This buffer should be used by calling processReceived() at the end of the while(1) loop.
+
+
 
 CCS TIPS/ADVICE:
 When debugging, local variables can be viewed by clicking on the "Expressions" tab in the debug perspective, and the variable can be typed in after
 clicking "Add new expression." If the local variable cannot be read, turn optimization off by clicking File -> Properties -> Build -> MSP430 Compiler
 -> Optimization and setting the optimization drop down menu to "off." 
-
+If debugging external to internal device communication, download the program to the external device so that it runs freely and interface it 
+with the Matlab script. Run the internal device within the CCS debugger.
+Be mindful of memory - this program is large and the internal device is running short on program memory. If necessary, it may be possible to
+repartition the memory and free up space by editing lnk_msp430f5529.cmd.
+Search files across the workspace by clicking flashlight icon -> file search.
 

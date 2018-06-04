@@ -23,9 +23,6 @@ extern Action actionPending;
 void processReceived(){
     uint16_t command = received[0];
     switch(command) {
-    case 0x01:
-        actionPending = SEND_DATA;
-        break;
     case 0x31:
         actionPending = NONE;
         sensor_startSampling((received[2]-'0')*10 + ((received[3]-'0')));

@@ -9,6 +9,11 @@
 #include "eeprom.h"
 #include "nfc_spi.h"
 
+void EEPROM_init() {
+    EEPROM_SS_SETDIR;
+    EEPROM_SS_HIGH;
+}
+
 void EEPROM_SPI_instruction(uint8_t cmd) {
 
     EEPROM_SS_LOW;
@@ -25,6 +30,8 @@ uint8_t EEPROM_ReadStatusRegister() {
     EEPROM_SS_HIGH;
     return result;
 }
+
+//TODO: fill in more helper functions to use memory device
 
 
 

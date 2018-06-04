@@ -15,6 +15,7 @@
 #include "timer_a.h"
 #include "driverlib.h"
 #include "adc12_a.h"
+#include "config.h"
 #include <stdio.h>
 
 extern SensorState sensorState;

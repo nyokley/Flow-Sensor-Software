@@ -29,6 +29,7 @@
 #define RES     0xAB
 
 //functions
+void EEPROM_init();
 void EEPROM_SPI_instruction(uint8_t cmd);
 uint8_t EEPROM_ReadStatusRegister();
 

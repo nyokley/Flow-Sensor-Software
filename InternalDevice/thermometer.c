@@ -15,7 +15,7 @@ _Bool adt7320_init() {
     uint8_t check8;
     uint16_t check16;
 
-    //ADT_SS_SETDIR;
+    ADT_SS_SETDIR;
 
     ADT_SS_LOW;
     //reset serial interface - initialize all internal circuitry - 32 1's
